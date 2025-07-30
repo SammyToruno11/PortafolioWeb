@@ -20,12 +20,12 @@ export default function Navbar() {
         </a>
 
         {/* Menú Desktop */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-6"  >
+          
           <ul className="flex gap-8 text-sm font-medium">
             <li><a href="#inicio" className="relative group">{language === 'es' ? 'Inicio' : 'Home'}<span className="absolute left-0 bottom-[-2px] h-[1px] w-0 bg-[#BB2649] transition-all group-hover:w-full"></span></a></li>
             <li><a href="#sobremi" className="hover:text-[#BB2649]">{language === 'es' ? 'Sobre mí' : 'About'}</a></li>
             <li><a href="#habilidades" className="hover:text-[#BB2649]">{language === 'es' ? 'Habilidades' : 'Skills'}</a></li>
-            <li><a href="#formacion" className="hover:text-[#BB2649]">{language === 'es' ? 'Formación' : 'Education'}</a></li>
             <li><a href="#proyectos" className="hover:text-[#BB2649]">{language === 'es' ? 'Proyectos' : 'Projects'}</a></li>
             <li><a href="#contacto" className="hover:text-[#BB2649]">{language === 'es' ? 'Contacto' : 'Contact'}</a></li>
           </ul>
@@ -59,7 +59,6 @@ export default function Navbar() {
             <li><a href="#inicio" onClick={() => setMenuOpen(false)}>{language === 'es' ? 'Inicio' : 'Home'}</a></li>
             <li><a href="#sobremi" onClick={() => setMenuOpen(false)}>{language === 'es' ? 'Sobre mí' : 'About'}</a></li>
             <li><a href="#habilidades" onClick={() => setMenuOpen(false)}>{language === 'es' ? 'Habilidades' : 'Skills'}</a></li>
-            <li><a href="#formacion" onClick={() => setMenuOpen(false)}>{language === 'es' ? 'Formación' : 'Education'}</a></li>
             <li><a href="#proyectos" onClick={() => setMenuOpen(false)}>{language === 'es' ? 'Proyectos' : 'Projects'}</a></li>
             <li><a href="#contacto" onClick={() => setMenuOpen(false)}>{language === 'es' ? 'Contacto' : 'Contact'}</a></li>
           </ul>
