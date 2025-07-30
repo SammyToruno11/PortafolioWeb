@@ -1,5 +1,6 @@
 import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "../context/LanguageContext";
 
 // Tipografías personalizadas
 const playfair = Playfair_Display({
@@ -24,14 +25,15 @@ export const metadata = {
   },
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body
         className={`${montserrat.variable} ${playfair.variable} antialiased bg-[#E7E3DD] text-[#043353]`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
