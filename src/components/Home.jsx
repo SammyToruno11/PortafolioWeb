@@ -2,6 +2,8 @@
 
 import { Typewriter } from 'react-simple-typewriter'
 import { useLanguage } from '@/context/LanguageContext'
+import { motion } from 'framer-motion'
+
 
 export default function Home() {
   const { language } = useLanguage()
