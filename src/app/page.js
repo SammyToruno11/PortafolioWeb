@@ -4,6 +4,7 @@ import AboutMe from '@/components/AboutMe'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import ScrollToTop from '@/components/ScrollToTop'
+import ContactForm from '@/components/ContactForm'
 
 
 export default function Page() {
@@ -15,6 +16,7 @@ export default function Page() {
       <Skills />
       <Projects />
       <ScrollToTop />
+      <ContactForm />
 
     </>
   )
