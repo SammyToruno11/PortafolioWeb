@@ -3,6 +3,7 @@
 import React, { useState } from "react"
 import { useLanguage } from "@/context/LanguageContext"
 import emailjs from 'emailjs-com';
+import { motion } from 'framer-motion'
 
 export default function ContactForm() {
     const { language } = useLanguage()
@@ -72,31 +73,36 @@ export default function ContactForm() {
     return (
         <section
             id="contacto"
-            className="flex justify-center bg-[#E7E3DD] py-20"
+            className="flex justify-center bg-[#E7E3DD] py-16"  // Reducido el espacio vertical
             style={{ fontFamily: 'var(--font-montserrat)', color: '#043353' }}
         >
-            <div
-                className="max-w-2xl w-full px-8"
+            <motion.div
+                className="max-w-xl w-full px-6"  // Aumenté el ancho del formulario
                 style={{
                     backgroundColor: '#ffffff',
-                    borderRadius: '15px',
-                    boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+                    borderRadius: '10px',
+                    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                    padding: '20px',
                 }}
+                initial={{ opacity: 0, y: 20 }}  // Animación de entrada
+                whileInView={{ opacity: 1, y: 0 }}  // Animación de aparición
+                transition={{ duration: 0.4 }}  // Duración de la animación
+                viewport={{ once: true, amount: 0.3 }}  // Activar la animación cuando el 30% del div es visible
             >
                 <h2
-                    className="text-4xl font-bold text-center mb-5"
+                    className="text-3xl font-semibold text-center mb-5"
                     style={{
                         fontFamily: 'var(--font-playfair)',
                         color: '#043353',
-                        fontSize: '2.25rem',
+                        fontSize: '1.875rem',  // Un tamaño de fuente más pequeño
                     }}
                 >
                     {t.title}
                 </h2>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4"> {/* Espaciado más pequeño */}
                     <div className="flex flex-col space-y-2">
-                        <label htmlFor="name" className="text-lg font-semibold">
+                        <label htmlFor="name" className="text-base font-semibold">
                             {t.name}
                         </label>
                         <input
@@ -117,7 +123,7 @@ export default function ContactForm() {
                     </div>
 
                     <div className="flex flex-col space-y-2">
-                        <label htmlFor="email" className="text-lg font-semibold">
+                        <label htmlFor="email" className="text-base font-semibold">
                             {t.email}
                         </label>
                         <input
@@ -138,7 +144,7 @@ export default function ContactForm() {
                     </div>
 
                     <div className="flex flex-col space-y-2">
-                        <label htmlFor="message" className="text-lg font-semibold">
+                        <label htmlFor="message" className="text-base font-semibold">
                             {t.message}
                         </label>
                         <textarea
@@ -148,7 +154,7 @@ export default function ContactForm() {
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             className="px-4 py-2 border rounded-lg border-[#BB2649] focus:outline-none focus:ring-2 focus:ring-[#BB2649] transition-all"
                             placeholder="Escribe tu mensaje"
-                            rows="4"
+                            rows="3"  // Reducido el tamaño de filas
                             required
                             style={{
                                 backgroundColor: "#f5f5f5",
@@ -160,7 +166,7 @@ export default function ContactForm() {
 
                     <button
                         type="submit"
-                        className="w-auto px-8 py-2 bg-[#BB2649] text-white font-semibold rounded-lg hover:bg-[#043353] transition-all mx-auto block"
+                        className="w-auto px-6 py-2 bg-[#BB2649] text-white font-semibold rounded-lg hover:bg-[#043353] transition-all mx-auto block"
                         disabled={isSubmitting}
                         style={{ fontFamily: 'var(--font-montserrat)' }}
                     >
@@ -190,7 +196,7 @@ export default function ContactForm() {
                 {errorMessage && (
                     <p className="text-center text-lg font-semibold mt-4 text-red-600">{errorMessage}</p>
                 )}
-            </div>
+            </motion.div>
         </section>
     )
 }
