@@ -10,9 +10,13 @@ export default function Habilidades() {
   const texts = {
     es: {
       title: 'Habilidades',
+      subtitle:
+        'Estas son las herramientas y tecnologías que domino y utilizo en el desarrollo de aplicaciones web.',
     },
     en: {
       title: 'Skills',
+      subtitle:
+        'These are the tools and technologies I master and use in web application development.',
     },
   };
 
@@ -31,14 +35,24 @@ export default function Habilidades() {
 
   return (
     <section id="habilidades" className="py-20 bg-[#E7E3DD] text-[#043353]">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Título */}
         <h2
-          className="text-3xl font-bold mb-12 text-center"
+          className="text-3xl font-bold text-center mb-6"
           style={{ fontFamily: 'var(--font-playfair)' }}
         >
           {t.title}
         </h2>
 
+        {/* Subtítulo */}
+        <p
+          className="text-center max-w-3xl mx-auto text-base md:text-lg mb-12"
+          style={{ fontFamily: 'var(--font-montserrat)' }}
+        >
+          {t.subtitle}
+        </p>
+
+        {/* Cuadros de habilidades */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
           {skills.map((skill, idx) => (
             <motion.div

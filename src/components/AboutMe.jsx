@@ -36,7 +36,7 @@ export default function AboutMe() {
                 {/* Imagen a la izquierda */}
                 <div className="flex justify-center">
                     <Image
-                        src="/assets/samanta-avatar.png"
+                        src="/assets/logoSamantaBck.png"
                         alt="Samanta illustration"
                         width={350}
                         height={350}

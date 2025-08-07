@@ -7,6 +7,8 @@ import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer'; 
 import { useLanguage } from '@/context/LanguageContext'
+import { FaGithub } from "react-icons/fa";
+
 
 const Projects = () => {
   
@@ -128,13 +130,14 @@ const Projects = () => {
                 <h1 className="font-semibold text-xl pt-4">{e.name}</h1>
 
                 {/* Animación de entrada usando react-intersection-observer */}
-                <div className="mt-4">
-                  <a href={e.githubLink} target="_blank" rel="noopener noreferrer">
-                    <button className="details__btn mt-4 bg-[#BB2649] text-white px-6 py-2 rounded-md hover:bg-[#043353] transition-all">
-                      GitHub
-                    </button>
-                  </a>
-                </div>
+               <div className="mt-4">
+  <a href={e.githubLink} target="_blank" rel="noopener noreferrer">
+    <button className="flex items-center gap-2 mt-4 bg-[#BB2649] text-white px-6 py-2 rounded-md hover:bg-[#043353] transition-all">
+      <FaGithub className="text-lg" />
+      GitHub
+    </button>
+  </a>
+</div>
               </div>
             </div>
           ))}
