@@ -1,19 +1,28 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap'); /* Agrega la fuente Montserrat */
 
+@import "tailwindcss"; 
+/* Asegúrate de importar TailwindCSS */
+
+/* Variables CSS personalizadas */
 :root {
   --color-principal: #043353;
   --color-secundario: #E7E3DD;
   --color-acento: #BB2649;
 }
 
+/* Estilos generales */
 body {
-  background: var(--color-secundario);
-  color: var(--color-principal);
-  font-family: var(--font-montserrat), sans-serif;
+  background: var(--color-secundario); /* Usando la variable de color secundario */
+  color: var(--color-principal); /* Usando la variable de color principal */
+  font-family: 'Montserrat', sans-serif; /* Usando la fuente Montserrat */
 }
 
+/* Estilos de la página */
 html {
-  scroll-behavior: smooth;
-scroll-padding-top: 100px;
+  scroll-behavior: smooth; /* Hacer que el desplazamiento sea suave */
+  scroll-padding-top: 100px; /* Añadir espacio para los encabezados fijos */
+}
 
+.slick-slide > div {
+  margin: 0 10px;
 }

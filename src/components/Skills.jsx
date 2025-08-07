@@ -31,7 +31,7 @@ export default function Habilidades() {
 
   return (
     <section id="habilidades" className="py-20 bg-[#E7E3DD] text-[#043353]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-6">
         <h2
           className="text-3xl font-bold mb-12 text-center"
           style={{ fontFamily: 'var(--font-playfair)' }}
